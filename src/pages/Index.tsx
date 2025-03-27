@@ -61,7 +61,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto">
           <section className="text-center mb-10 animate-slide-down">
             <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4 sm:text-5xl">
-              Shorten your links<span className="text-primary">.</span>
+              Shrink your links<span className="text-primary">.</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
               Create shortened URLs with our fast and secure URL shortener service.

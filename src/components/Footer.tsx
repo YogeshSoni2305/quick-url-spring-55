@@ -13,9 +13,9 @@ export function Footer({ className }: FooterProps) {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <div className="h-7 w-7 rounded-md bg-primary/90 flex items-center justify-center">
-                <span className="text-white font-medium text-xs">QS</span>
+                <span className="text-white font-medium text-xs">SI</span>
               </div>
-              <span className="ml-2 text-sm font-medium">QuickShorten</span>
+              <span className="ml-2 text-sm font-medium">ShrinkIt</span>
             </div>
             
             <div className="flex items-center space-x-4 text-sm text-muted-foreground">
@@ -33,7 +33,7 @@ export function Footer({ className }: FooterProps) {
           
           <div className="mt-4 text-center md:text-left">
             <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} QuickShorten. All rights reserved.
+              &copy; {new Date().getFullYear()} ShrinkIt. All rights reserved.
             </p>
           </div>
         </div>
