@@ -4,7 +4,7 @@
  */
 
 // API base URL - adjust based on deployment environment
-const API_BASE_URL = "https://shrinkit-backend-nmzi.onrender.com/shorten"
+const API_BASE_URL = "https://shrinkit-backend-nmzi.onrender.com"
 
 interface ShortenResponse {
   shortUrl: string;
