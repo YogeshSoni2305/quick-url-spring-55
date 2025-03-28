@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/**/*.js",
+        "use": "@vercel/node" // Backend build
+      },
+      {
+        "src": "src/index.tsx",
+        "use": "@vercel/node" // Frontend build (assuming React with TypeScript)
+      }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "/api/$1" }, // API routes
+      { "src": "/(.*)", "dest": "/src/index.tsx" } // Frontend catch-all
+    ]
+  }
