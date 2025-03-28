@@ -1,10 +1,9 @@
-
 /**
  * URL Shortener API service
  */
 
 // API base URL - adjust based on deployment environment
-const API_BASE_URL = "https://shrinkit-backend-nmzi.onrender.com"
+const API_BASE_URL = "https://shrinkit-backend-nmzi.onrender.com";
 
 interface ShortenResponse {
   shortUrl: string;
@@ -50,9 +49,6 @@ export async function checkApiStatus(): Promise<boolean> {
   try {
     const response = await fetch(`${API_BASE_URL}/test`, {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
     });
 
     return response.ok;
