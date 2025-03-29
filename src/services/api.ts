@@ -1,9 +1,5 @@
-/**
- * URL Shortener API service
- */
-
-// API base URL - Use relative path since frontend and backend are on the same domain
-const API_BASE_URL = "/api"; // Vercel serves API routes under /api/
+// src/services/api.ts
+const API_BASE_URL = "/api";
 
 interface ShortenResponse {
   shortUrl: string;
@@ -13,11 +9,6 @@ interface ErrorResponse {
   error: string;
 }
 
-/**
- * Shortens a URL using the backend API
- * @param url - The original URL to shorten
- * @returns A promise containing the shortened URL
- */
 export async function shortenUrl(url: string): Promise<string> {
   try {
     const response = await fetch(`${API_BASE_URL}/shorten`, {
@@ -41,19 +32,35 @@ export async function shortenUrl(url: string): Promise<string> {
   }
 }
 
-/**
- * Checks if the API server is available
- * @returns A promise that resolves to true if the server is available
- */
 export async function checkApiStatus(): Promise<boolean> {
   try {
     const response = await fetch(`${API_BASE_URL}/test`, {
       method: "GET",
     });
-
     return response.ok;
   } catch (error) {
     console.error("API server unavailable:", error);
     return false;
+  }
+}
+
+export async function testExternalApi(): Promise<string> {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch from external API");
+    }
+
+    const data = await response.json();
+    return data.title;
+  } catch (error) {
+    console.error("Error calling external API:", error);
+    throw error;
   }
 }
